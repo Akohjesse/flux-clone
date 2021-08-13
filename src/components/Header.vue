@@ -80,7 +80,7 @@ header{
     src: url('../assets/cretype  Caros.woff') format('woff');
     }
 
-    @media (max-width:1020px){
+    @media (max-width:1090px){
       nav{
         display: none;
       }

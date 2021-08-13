@@ -1,5 +1,5 @@
 <template>
-  <Header @enter='promptBoss' :header=header />
+  <Header :header=header />
   <main>
     <div class="banner">
       <div class="text">
@@ -19,25 +19,39 @@
       </div>
     </div>
   </main>
+  <Cover v-if="showCover" v-model='width' />
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import Header from './components/Header.vue';
+import Cover from './components/Cover.vue';
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header, Cover
   },
   data(){
     return{
-      header: 'Go to web'
+      header: 'Go to web',
+      showCover: false,
+      width: ''
     }
   },
+  beforeMount(){
+   window.addEventListener('resize', this.docuMent);
+    window.addEventListener('load', this.docuMent);
+  },
   methods:{
-      promptBoss(){
-          window.prompt("How far boss man")
-      }
+     docuMent(){
+       this.width = window.innerWidth;
+         if(this.width < 1090){
+         this.showCover = true;
+       }
+       else{
+         this.showCover = false;
+       }
+     }
   }
 }
 </script>
