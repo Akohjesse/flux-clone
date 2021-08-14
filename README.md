@@ -1,4 +1,4 @@
-# vue-begin-build
+# Flux app clone
 
 ## Project setup
 ```

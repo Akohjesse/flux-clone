@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Cover from './components/Cover.vue';
+import Header from './components/Header.vue'
+import Cover from './components/Cover.vue'
 
 export default {
   name: 'App',
@@ -40,7 +40,9 @@ export default {
   },
   beforeMount(){
    window.addEventListener('resize', this.docuMent);
-    window.addEventListener('load', this.docuMent);
+  },
+  update(){
+        this.docuMent
   },
   methods:{
      docuMent(){
