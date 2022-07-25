@@ -19,41 +19,20 @@
       </div>
     </div>
   </main>
-  <Cover v-if="showCover" v-model='width' />
 </template>
 
 <script>
 import Header from './components/Header.vue'
-import Cover from './components/Cover.vue'
 
 export default {
   name: 'App',
   components: {
-    Header, Cover
+    Header
   },
   data(){
     return{
       header: 'Go to web',
-      showCover: false,
-      width: ''
     }
-  },
-  beforeMount(){
-   window.addEventListener('resize', this.docuMent);
-  },
-  update(){
-        this.docuMent
-  },
-  methods:{
-     docuMent(){
-       this.width = window.innerWidth;
-         if(this.width < 1090){
-         this.showCover = true;
-       }
-       else{
-         this.showCover = false;
-       }
-     }
   }
 }
 </script>
